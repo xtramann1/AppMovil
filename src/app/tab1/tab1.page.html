@@ -1,17 +1,14 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+
+    <ion-title>Ultimos 15 sismos</ion-title>
+ 
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content>
+  <h2>Datos json</h2>
+  <ion-list>
+    <button [routerLink]="['/masinfo',item.id]" ion-item *ngFor="let item of usuarios">
+      {{item.id}} - {{item.name}}
+    </button>
+  </ion-list>
 </ion-content>

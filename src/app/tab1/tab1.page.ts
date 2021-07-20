@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { MasinfoPage } from '../masinfo/masinfo.page';
+import {proveedor1Provider} from '../providers/proveedor1';
 
 @Component({
   selector: 'app-tab1',
@@ -6,7 +10,16 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
-  constructor() {}
-
+  usuarios;
+  constructor(public navCtrl: NavController, public proveedor:proveedor1Provider) {
+    
+  }
+  ngOnInit(){
+    this.proveedor.obtenerdatos()
+    .subscribe(
+      (data) => {this.usuarios = data;},
+      (error)=> {console.log(error);}
+    )
+  }
+  
 }

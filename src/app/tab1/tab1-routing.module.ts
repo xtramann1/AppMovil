@@ -6,6 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+    children:[
+      {
+        path: 'masinfo',
+        loadChildren: () => import('../masinfo/masinfo.module').then(m => m.MasinfoPageModule)
+      }
+    ]
   }
 ];
 
