@@ -1,5 +1,6 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>Sismo</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,15 +9,13 @@
   <ion-card>
     <div id="map" class="map"></div>
     <ion-card-header>
-      <ion-card-title>Wenardo</ion-card-title>
-      <ion-card-subtitle>asda</ion-card-subtitle>
+      <ion-card-title>Detalle</ion-card-title>
+      <ion-card-subtitle>asda<br>
+        - {{name}} <br>
+    - {{username}} <br>
+    - {{email}}<br>
+      </ion-card-subtitle>
     </ion-card-header>
-  </ion-card>
-
-  <ion-card>
-    - {{name}} 
-    - {{username}} 
-    - {{email}}
   </ion-card>
   <ion-button [routerLink]="['/tabs/tab1']">Volver</ion-button>
 </ion-content>

@@ -1,40 +1,32 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-title>
-      Login Google and Facebook
+    <ion-title >
+      Login Google 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
+  <form>
+    <div class="group">
+      <label class="bar">{{ name ? name : 'Usuario' }}</label>
+    </div>
+    <div class="group">
+      <label class="bar">{{ email ? email : 'Email' }}</label>
+    </div>
+    <button type="button" class="button buttonBlue" (click)="buttonEntrar()">Entrar
+      <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </button>
+  </form>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col size="5">
-        <ion-img class="picture" [src]="picture ? picture : 'https://www.simplifai.ai/wp-content/uploads/2019/06/blank-profile-picture-973460_960_720-400x400.png'"></ion-img>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="12">
-        <ion-text>
-          {{ name ? name : 'Nombre de usuario' }}
-        </ion-text>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="12">
-        <ion-text>
-          {{ email ? email : 'Correo electrónico' }}
-        </ion-text>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <div class="buttonsContainer">
-    <ion-button expand="block" (click)="loginGoogle()">
+  <div>
+    <button ion-button class="button" expand="block" (click)="loginGoogle()">
       <ion-icon name="logo-google"></ion-icon>
       Iniciar Sesión con Google
-    </ion-button>
-    <ion-button [routerLink]="['/tabs/tab1']">Entrar</ion-button>
+    </button>
   </div>
+  <footer><a href="https://github.com/xtramann1/AppMovil/tree/master" target="_blank"><img src="assets/img/github.png"></a>
+    <p>Código App Móvil <a href="https://github.com/xtramann1/AppMovil/tree/master" target="_blank">Link</a></p>
+  </footer>
 </ion-content>

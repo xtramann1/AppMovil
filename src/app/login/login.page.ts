@@ -15,8 +15,8 @@ import { Router } from '@angular/router';
 export class LoginPage {
 
   picture;
-  name;
-  email;
+  name:String = null;
+  email:String  = null;
 
   constructor(private afAuth: AngularFireAuth,
     private platform: Platform,
@@ -51,7 +51,25 @@ export class LoginPage {
   }
 
   buttonEntrar(){
+    if(this.name == null || this.email == null ){
+      console.log("No se han ingresado credenciales");
+    }
+    else{
+      var contador = 0;
+      contador = this.contarLargo(contador);
+      if(this.email[contador + 1] != 'u' && this.email[contador + 2] != 't'){
+        console.log("El correo ingresado no es utem " + this.email[contador + 1]);
+       }
+      else{
+        this.router.navigateByUrl('tabs/home');}
+    }
+  }
 
+  contarLargo(contador){
+    while(this.email[contador] != '@'){
+      contador++;
+    }
+    return contador; 
   }
   ngOnInit() {
 

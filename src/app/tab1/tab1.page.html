@@ -1,15 +1,20 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 <ion-header>
-
-    <ion-title>Ultimos 15 sismos</ion-title>
- 
+  <ion-toolbar color="dark">
+    <ion-title>Ultimos Sismos</ion-title>
+  </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <h2>Datos json</h2>
+  <h2 class="letra"><b>Estos son los ultimos sismos producidos<br>
+      Presione en el sismo deseado para ver su información.</b>
+  </h2>
   <ion-list>
-    <button [routerLink]="['/masinfo',item.id]" ion-item *ngFor="let item of usuarios">
+    <button ion-button class="button" [routerLink]="['/masinfo',item.id]" ion-item *ngFor="let item of usuarios">
+      <ion-icon name="navigate"></ion-icon>
       {{item.id}} - {{item.name}}
+      <br>
     </button>
-    <button [routerLink]="['/login']">Probando login</button>
   </ion-list>
 </ion-content>
