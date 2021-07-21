@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "897719871938",
+    "project_id": "movil-ionic",
+    "storage_bucket": "movil-ionic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897719871938:android:57c3960c2c09d3f0ff4e5b",
+        "android_client_info": {
+          "package_name": "com.utem.movil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897719871938-eg7h2h6flit2njjc0im7rufgaha7nus4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.utem.movil",
+            "certificate_hash": "0f6029f52616947d7de9534108f09546a73e4640"
+          }
+        },
+        {
+          "client_id": "897719871938-iurmqluh7csrtlefsbn94misldgd12jj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt1qWO1imReoyOl9y9RCzkqAAYS8mn4XY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897719871938-iurmqluh7csrtlefsbn94misldgd12jj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

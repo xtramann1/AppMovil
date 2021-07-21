@@ -9,12 +9,21 @@ import { AppComponent } from './app.component';
 import { MasinfoPage } from './masinfo/masinfo.page';
 import { HomePage } from './home/home.page';
 import {proveedor1Provider} from './providers/proveedor1';
+import { LoginPage } from './login/login.page';
+import { firebaseConfig } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire'; 
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 
 @NgModule({
-  declarations: [AppComponent, MasinfoPage, HomePage],
-  entryComponents: [MasinfoPage, HomePage],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, proveedor1Provider],
+  declarations: [AppComponent, MasinfoPage, HomePage, LoginPage],
+  entryComponents: [MasinfoPage, HomePage, LoginPage],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    , proveedor1Provider, GooglePlus],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

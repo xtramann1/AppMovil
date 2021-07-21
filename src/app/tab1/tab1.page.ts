@@ -11,7 +11,7 @@ import {proveedor1Provider} from '../providers/proveedor1';
 })
 export class Tab1Page {
   usuarios;
-  constructor(public navCtrl: NavController, public proveedor:proveedor1Provider) {
+  constructor(public proveedor:proveedor1Provider) {
     
   }
   ngOnInit(){
