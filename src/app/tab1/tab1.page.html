@@ -11,9 +11,9 @@
       Presione en el sismo deseado para ver su información.</b>
   </h2>
   <ion-list>
-    <button ion-button class="button" [routerLink]="['/masinfo',item.id]" ion-item *ngFor="let item of usuarios">
+    <button ion-button class="button" [routerLink]="['/masinfo',item.idd]" ion-item *ngFor="let item of usuarios">
       <ion-icon name="navigate"></ion-icon>
-      {{item.id}} - {{item.name}}
+      Sismo: {{item.referencia_Geografica}}
       <br>
     </button>
   </ion-list>

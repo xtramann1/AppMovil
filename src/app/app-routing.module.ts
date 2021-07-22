@@ -6,7 +6,7 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'masinfo/:id',
+    path: 'masinfo/:idd',
     loadChildren: () => import('./masinfo/masinfo.module').then(m => m.MasinfoPageModule)
   },
   {

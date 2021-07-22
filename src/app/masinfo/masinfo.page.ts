@@ -22,17 +22,42 @@ export class MasinfoPage implements OnInit {
   email:string;
   sismos: any=[];
 
-  latitud:number;
-  longitud:number;
+  latitud: any;
+  longitud: any;
+  profundidad:any;
+  magnitud:any;
+  fechaLocal:any;
+  fechaUTC:any;
+  referencia:any;
 
   @ViewChild('map', {read: ElementRef, static: false}) mapRef: ElementRef;
   constructor(
     private active:ActivatedRoute, public proveedor:proveedor1Provider,
   ) {}
+  ngOnInit() {
+    this.id = this.active.snapshot.paramMap.get("idd");
+    this.finalId = this.id - 1;
+    this.proveedor.obtenerdatos()
+    .subscribe(res=>{
+      console.log("Res",res)
+      this.sismos = res;
+      this.latitud = this.sismos[this.finalId].latitud;
+      this.longitud = this.sismos[this.finalId].longitud;
+      this.magnitud = this.sismos[this.finalId].magnitud;
+      this.fechaLocal= this.sismos[this.finalId].fechaLocal;
+      this.fechaUTC = this.sismos[this.finalId].fechaUTC;
+      this.profundidad = this.sismos[this.finalId].profundidad;
+      this.referencia = this.sismos[this.finalId].referencia_Geografica;
+      console.log(this.latitud + "  "+ this.longitud);
+      this.showmap(this.latitud, this.longitud);
+    }
+    )
+  }
 
-  showmap(){
+  showmap(latitud, longitud){
     const mapele: HTMLElement = document.getElementById('map');
-    const LatLng = {lat: -33.53340 , lng: -70.57544};
+    console.log(latitud + "  "+ longitud);
+    const LatLng = {lat: latitud , lng: longitud};
     this.map = new google.maps.Map(mapele,{
       center: LatLng,
       zoom: 15,
@@ -47,21 +72,5 @@ export class MasinfoPage implements OnInit {
       title: "Lugar del sismo"
       });
     })
-  }
-
-  ngOnInit() {
-    this.id = this.active.snapshot.paramMap.get("id");
-    this.finalId = this.id - 1;
-    this.proveedor.obtenerdatos()
-    .subscribe(res=>{
-      console.log("Res",res)
-      this.sismos = res;
-      this.name = this.sismos[this.finalId].name;
-      this.username = this.sismos[this.finalId].username;
-      this.email= this.sismos[this.finalId].email;
-      console.log("nombre",this.name)
-    }
-    )
-    this.showmap();
   }
 }

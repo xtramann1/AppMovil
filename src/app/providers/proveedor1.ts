@@ -8,6 +8,6 @@ export class proveedor1Provider{
         console.log("Hola");
     }
     obtenerdatos(){
-        return this.http.get('https://jsonplaceholder.typicode.com/users')
+        return this.http.get('http://localhost:9696/v1/Sismo/listar')
     }   
 }
