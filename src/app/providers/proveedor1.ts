@@ -8,6 +8,6 @@ export class proveedor1Provider{
         console.log("Hola");
     }
     obtenerdatos(){
-        return this.http.get('http://localhost:9696/v1/Sismo/listar')
+        return this.http.get('http://api.jkd.cl:18082/v1/Sismo/listar')
     }   
 }

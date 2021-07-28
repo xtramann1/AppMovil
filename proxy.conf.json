@@ -1,7 +1,0 @@
-{
-    "/v1/Sismo/*":{
-        "target": "http://localhost:9696",
-        "secure":false,
-        "logLevel": "debug"
-    }
-}
